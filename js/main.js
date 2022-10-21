@@ -19,9 +19,12 @@ domID("addItem").onclick = (e)=>{
     taskList.renderTaskToDo("todo");
     taskList.luuStorage();
     domID("newTask").value = "";
+    // let a = taskList.filterTaskProgress();
+    // console.log(a);
 }
 window.removeTask = (task) => {
     taskList.deleteTask(task);
+    console.log(task);
     taskList.renderTaskToDo("todo");
     taskList.renderTaskComplete("completed")
     taskList.luuStorage();

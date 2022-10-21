@@ -57,6 +57,10 @@ export class TaskList {
             this.arrToDo.splice(index, 1);
         };
     }
+    // deleteTask(task){
+    //     let index = this.arrToDo.findIndex(prod => prod.id === task);
+    //     this.arrToDo.splice(index,1);
+    // }
 
     //complete
     //them trang thai khi bam vao icon danh dau
@@ -102,19 +106,12 @@ export class TaskList {
 
     sortUp() {
         this.arrToDo.sort((task1, task2) => {
-            if (task1.id > task2.id) {
-                return 1
-            }
-            return -1
+        return task1.id - task2.id;
         });
     }
 
     sortDown() {
-        this.arrToDo.sort((task1, task2) => {
-            if (task1.id < task2.id) {
-                return 1
-            }
-            return -1
-        });
+        this.sortUp();
+        this.arrToDo.reverse();
     }
 };
