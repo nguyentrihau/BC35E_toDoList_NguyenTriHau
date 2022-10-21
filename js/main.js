@@ -6,7 +6,8 @@ let taskList = new TaskList;
 let domID = (id) => document.getElementById(id);
 
 
-domID("addItem").onclick = ()=>{
+domID("addItem").onclick = (e)=>{
+    e.preventDefault();
     let newTask = domID("newTask").value;
     if(newTask.trim() == ""){
         alert("Please enter a task to do")
@@ -17,6 +18,7 @@ domID("addItem").onclick = ()=>{
     console.log(task.description);
     taskList.renderTaskToDo("todo");
     taskList.luuStorage();
+    domID("newTask").value = "";
 }
 window.removeTask = (task) => {
     taskList.deleteTask(task);
